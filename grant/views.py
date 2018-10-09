@@ -1,10 +1,13 @@
 from django.http import HttpResponse 
 from django.template import loader
-#from django.shortcuts import render
+from django.shortcuts import render
 #from django.template import loader
 
 def index(request):
-#    return render(request, 'home.html')
+    return render(request, 'grant/home.html')
 #    return HttpResponse("Hello, world. You're at the grant index.")
-    template = loader.get_template('base.html')
-    return HttpResponse(template.render(request))
+#    template = loader.get_template('auth.html')
+#    return HttpResponse(template.render(request))
+    
+# def index(request):a
+#   return render(request, 'grant/login.html')

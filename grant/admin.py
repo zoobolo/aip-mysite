@@ -1,5 +1,7 @@
 from django.contrib import admin
 
+from .models import UserProfile # tutorial
+
 
 from .models import Grant
 from .models import Project
@@ -27,7 +29,7 @@ from .models import Report
 # class SponsorAdmin(admin.ModelAdmin):
 #     fields = ['sponsor_name']
 # #    ]
-
+admin.site.register(UserProfile) # added for tutorial
 admin.site.site_header = 'AIP Administration'
 admin.site.site_title = "AIP"
 admin.site.index_title = "FAA ATL-ADO"

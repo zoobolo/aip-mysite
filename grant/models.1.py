@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import User
+from django.,contrib.auth.models import User
 
 class Airport(models.Model):
     airport_name = models.CharField("Airport Name",max_length=50)
@@ -52,8 +52,3 @@ class Report (models.Model):
     
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
-    description = models.CharField(max_length=100, default='')
-    city = models.CharField(max_length=100,default='')
-    website = models.URLField(default='')
-    phone = models.IntegerField(default=0)
-    

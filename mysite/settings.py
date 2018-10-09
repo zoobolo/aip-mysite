@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+#LOGIN_REDIRECT_URL = '/home/ubuntu/workspace/grant/templates/grant'
 
 # Application definition
 
@@ -127,3 +128,5 @@ STATIC_URL = '/static/'
 #STATIC_URL = '/home/ubuntu/workspace/grant/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "grant/static"),)
+
+LOGIN_REDIRECT_URL = 'home'
