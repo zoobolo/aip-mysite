@@ -10,43 +10,36 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       
       {% block head %}
-      <title></title>
+      <title>It's my Title Bar</title>
       {% endblock %}
     </head>
     <body>
-      <br>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Home</a>
+    <body data-spy="scroll" dat-target="#toc">
+      <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand width=36" href="/home">ATL-ADO</a>
+        <!--  <img src="../../static/img/faa.png" width="60" height="60" alt="">-->
+        <!--</a>-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="/grant/register">register<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/grant/register">Home<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">heading1</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="#">heading2</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a class="nav-link disabled" href="#">heading3 disabled</a>
           </li>
         </ul>
       </div>
-    </nav>
-    <div class="containerfluid">
+      </header>
       <div class="row flex-xl-nowrap">
-        <div class="col-12 col-md-3 col-xl-2 bd-sidebar"></div>
-          <nav class="collaspe bd-links" id="bd-docs-nav">
-            <div class="bd-toc-item">
-              <a class="yep">
-              </a>
-            </div> 
-          </nav>
-        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
       </div>  
     </div>
      {% block body %}

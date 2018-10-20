@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 #BASE_DIR = '/home/ubuntu/workspace/' 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print BASE_DIR
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -42,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+ #   'djmoney'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -121,12 +121,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATIC_ROOT = ''
+#STATIC_ROOT = '/home/ubuntu/workspace/grant/static'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_URL = '/static/'
-#STATIC_URL = '/home/ubuntu/workspace/grant/static/'
+#STATIC_URL = '/static/'
+STATIC_URL = '/home/ubuntu/workspace/grant/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "grant/static"),)
 
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
+
+#LOGIN_REDIRECT_URL = 'login'

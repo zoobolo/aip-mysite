@@ -1,4 +1,4 @@
-"""mysite URL Configuration
+"""mainsite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -14,14 +14,17 @@ Including another URLconf
     2. Import the include() function: from django.conf.urls import url, include
     3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url, patterns
+
+from django.conf.urls import url, include
 from django.contrib import admin
-from mysite import views
+from django.template import loader
+from django.contrib.auth import views as auth_views
+from . import views
+
 
 urlpatterns = [
-    
-#    url(r'^$', views.login_redirect, name='login_redirect'),
-    url(r'^', include('grant.urls')),
-    url(r'^grant/', include('grant.urls')),
-    url(r'^admin/', admin.site.urls),
+    url(r'^$', views.index, name='index'),
+    url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
+    url(r'^logout/$', auth_views.logout, {'template_name': 'logout.html'}, name='logout'),  
+#    url(r'^register/$', views.register, name='register'),  
 ]

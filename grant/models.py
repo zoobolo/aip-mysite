@@ -8,15 +8,17 @@ class Airport(models.Model):
     airport_name = models.CharField("Airport Name",max_length=50)
     airport_locid = models.CharField("LOCID",max_length=3)  
     list_display = ('airport_name', 'airport_locid')
+    ado_pm = models.CharField("Ado Program Manager",max_length=20)
     
     def __str__(self):
 #        return (self.airport_name,self.airport_locid)
-        return '%s %s' % (self.airport_name, self.airport_locid)
+        return '%s %s'  % (self.airport_name, self.airport_locid)
         
 class Grant(models.Model):
     airport = models.ForeignKey(Airport,on_delete=models.CASCADE,default=None) 
     grant_number = models.CharField("Grant Number",max_length=200)
     grant_amount = models.DecimalField("Grant Amount",max_digits=10, decimal_places=2)
+#    grant_amount = MoneyField(max_digits=10, decimal_places=2, default_currency='USD')
 
     def __str__(self):
         return self.grant_number
@@ -56,4 +58,3 @@ class UserProfile(models.Model):
     city = models.CharField(max_length=100,default='')
     website = models.URLField(default='')
     phone = models.IntegerField(default=0)
-    

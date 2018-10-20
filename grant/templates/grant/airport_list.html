@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Airport List</h1>
+  {% if airport_list %}
+  <ul>
+    {% for airport in airport_list %}
+      <li>
+        <a href="{{ airport.get_absolute_url }}">{{ airport.airport_name }}</a> ({{airport.airport_locid}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>Missing Airports?</p>
+  {% endif %}       
+{% endblock %}
