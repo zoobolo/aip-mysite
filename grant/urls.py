@@ -29,8 +29,7 @@ urlpatterns = [
 
     url(r'^$', auth_views.login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'template_name': 'logout.html'}, name='logout'),  
-    url(r'^home/$', views.index, name='home'),  
-#    url(r'^index/$', views.index, name='home'),  
+    url(r'^index/$', views.index, name='index'),  
 #    url(r'^register/$', views.register, name='register'), 
 #    url(r'^airport/$', views.getAirportListView.as_view(), name='airport_list'),
 ]
