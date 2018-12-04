@@ -12,11 +12,19 @@ def index(request):
         return redirect('login')
     
     airport_list = Airport.objects.order_by('airport_name')
+    # airport_list = Airport.objects.order_by('airport_locid')
     
     context = {'airport_list': airport_list}
    
+    # return render(request, 'home.html', context)
     return render(request, 'home.html', context)
 
+def sponsor(request):
+    return render(request, 'sponsor_base.html')
+
+def signup(request):
+    return render(request, 'signup.html')
+    
 # def home(request):
 #     if not request.user.is_authenticated():
 #         return redirect('login')

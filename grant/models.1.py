@@ -23,6 +23,7 @@ class Grant(models.Model):
         
 class Project(models.Model):
     grant = models.ForeignKey(Grant,on_delete=models.CASCADE)
+    airport = models.ForeignKey(Airport,on_delete=models.CASCADE)
     project_description = models.CharField("Project Description",max_length=200)
     
     def __str__(self):

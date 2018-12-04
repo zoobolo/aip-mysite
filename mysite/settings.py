@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
- #   'djmoney'
+    'django_sb_admin'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -130,6 +130,12 @@ STATIC_URL = '/home/ubuntu/workspace/grant/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "grant/static"),)
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'home'
+
+#LOGIN_REDIRECT_URL = 'home'
+
+USE_THOUSAND_SEPARATOR = True
+
+
+
 
 #LOGIN_REDIRECT_URL = 'login'

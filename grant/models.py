@@ -5,13 +5,18 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 class Airport(models.Model):
+    # username = models.ManyToManyField(User)
     airport_name = models.CharField("Airport Name",max_length=50)
     airport_locid = models.CharField("LOCID",max_length=3)  
     list_display = ('airport_name', 'airport_locid')
     ado_pm = models.CharField("Ado Program Manager",max_length=20)
+    # airport_engineer = models.ForeignKey(User)
+    # airport_planner = models.ForeignKey(User)
+    # airport_environmental = models.ForeignKey(User)
+    
     
     def __str__(self):
-#        return (self.airport_name,self.airport_locid)
+        # return (self.airport_name)
         return '%s %s'  % (self.airport_name, self.airport_locid)
         
 class Grant(models.Model):
@@ -24,14 +29,17 @@ class Grant(models.Model):
         return self.grant_number
         
 class Project(models.Model):
+    airport = models.ForeignKey(Airport,on_delete=models.CASCADE)
     grant = models.ForeignKey(Grant,on_delete=models.CASCADE)
     project_description = models.CharField("Project Description",max_length=200)
     
     def __str__(self):
-        return self.project_description
-        
+        # return self.project_description
+       return '%s %s'  % (self.grant, self.project_description) 
+       
 class Sponsor(models.Model):
     airport = models.ManyToManyField(Airport) 
+    username = models.ManyToManyField(User)
     sponsor_name = models.CharField("Sponsor Name",default=None,blank=True,max_length=200)
     sponsor_type = models.CharField("Sponsor Type",default=None,blank=True,max_length=200)
     sponsor_addr1 = models.CharField("Sponsor Address 1",default=None,blank=True,max_length=200)
@@ -45,7 +53,8 @@ class Sponsor(models.Model):
     sponsor_ADO = models.CharField("ADO",default=None,blank=True,max_length=200)
 
     def __str__(self):
-        return self.sponsor_name
+       return '%s %s'  % (self.sponsor_name, self.sponsor_addr1) 
+        # return self.sponsor_name
     
 class Report (models.Model):
     grant = models.ForeignKey(Grant,on_delete=models.CASCADE)
